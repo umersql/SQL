@@ -12,3 +12,5 @@ INSERT INTO Store VALUES (5, "Orange", 5, 8, 4);
 
 
 SELECT * FROM store;
+
+SELECT * FROM store WHERE price > 5 ORDER BY price;
