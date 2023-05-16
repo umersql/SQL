@@ -42,3 +42,17 @@ INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA
 
 select name from marvels where fighting_Skills = 4;
 
+SELECT name, sum(strength) as power from marvels 
+
+GROUP BY name
+
+HAVING power>6;
+
+SELECT name, avg(speed) as speed_level
+
+FROM marvels 
+
+GROUP BY name
+
+HAVING speed_level>3;
+
