@@ -1,6 +1,6 @@
 create table Automobile (id integer,car text, color text, price integer);
 
-insert into Automobile values (1,'tesla', 'red', 60);
+insert into Automobile values (1,'hummer', 'red', 60);
 
 insert into Automobile values (2,'lucid', 'white', 70);
 
@@ -8,9 +8,9 @@ insert into Automobile values (3,'apple', 'black', 80);
 
 insert into Automobile values (4,'rivian', 'black', 80);
 
-insert into Automobile values (5,'tesla', 'white', 40);
+insert into Automobile values (5,'hummer', 'white', 40);
 
-insert into Automobile values (6,'tesla', 'red', 50);
+insert into Automobile values (6,'hummer', 'red', 50);
 
 insert into Automobile values (7,'nio', 'white', 30);
 
