@@ -26,4 +26,4 @@ FROM movies
 
 LEFT OUTER JOIN movies sequels
 
-ON movies.sequel_id = sequels.id;
+ON movies.sequel_id = sequels.id;;
