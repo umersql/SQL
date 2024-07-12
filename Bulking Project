@@ -1,0 +1,10 @@
+CREATE TABLE calories ( howmany integer , day text) ;
+
+insert into calories
+values (1500,11724)
+
+
+
+
+
+;
