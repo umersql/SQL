@@ -1,10 +1,12 @@
-CREATE TABLE calories ( howmany integer , day text) ;
+CREATE TABLE calories ( howmany integer , day text, workout text) ;
 
 insert into calories
-values (1500,11724)
+values (1500,11724,'Yes');
+
+insert into calories
+values (500,12724,'No');
 
 
 
 
 
-;
