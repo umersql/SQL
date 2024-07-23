@@ -34,5 +34,5 @@ insert into calories
 values (0,210724,'no');
 
 insert into calories
-values (0,220724,'no');
+values (1500,220724,'no');
 
