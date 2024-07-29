@@ -37,7 +37,19 @@ insert into calories
 values (1500,220724,'no');
 
 insert into calories
-values (2780,230724,'Yes');
+values (2780,230724,'yes');
 
 insert into calories
-values (390,240724,'Yes');
+values (390,240724,'yes');
+
+insert into calories
+values (0,250724,'yes');
+
+insert into calories
+values (0,260724,'no');
+
+insert into calories
+values (0,270724,'yes');
+
+insert into calories
+values (1000,280724,'no');
