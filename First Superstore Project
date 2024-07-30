@@ -28,16 +28,23 @@ VALUES
 
 Prompts I made below as if I was working in a real job
 
-
-
 select * from superstore;
 
-
-
-
+select * from superstore limit 5;
 
 SELECT item_name, price
-FROM superstore;
+FROM superstore order by price;
+
+SELECT *
+FROM superstore
+WHERE price < 100
+ORDER BY ;
+
+
+
+
+
+
 
 select sum(price) from superstore;
 
