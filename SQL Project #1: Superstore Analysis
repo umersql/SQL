@@ -37,8 +37,7 @@ FROM superstore order by price;
 
 SELECT *
 FROM superstore
-WHERE price < 100
-ORDER BY ;
+WHERE price < 100;
 
 
 
