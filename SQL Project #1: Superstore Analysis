@@ -25,29 +25,18 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-
+#For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
 Prompts I made below as if I was working in a real job
 
-select * from superstore;
+#Use a SELECT statement to order the items by price.
+select item_name,price from superstore order by price;
 
-select * from superstore limit 5;
+#Show a statistic about the item prices.
+select count(category) as AvailableItems,category from superstore group by category;
 
-SELECT item_name, price
-FROM superstore order by price;
-
-SELECT *
-FROM superstore
-WHERE price < 100;
+#Show a statistic about the price for items in the category of "Kitchen Supplies". 
+select item_name,price, category from superstore where price > 40.00 and category = 'Kitchen Supplies'
 
 
 
 
-
-
-
-select sum(price) from superstore;
-
-select category from superstore;
-
-
-select max(price) from superstore where category = 'Kitchen Supplies';
