@@ -74,7 +74,10 @@ where healthcare_benefits = 1 and paid_time_off_days >= 20
 # Which company in the Retail industry has the least revenue, and what's their revenue? 
 SELECT company_name, min(revenue)
 FROM fortune_companies
-WHERE industry = 'Retail'
+WHERE industry = 'Retail' 
+OR
+SELECT company_name, min(revenue),industry from fortune_companies 
+group by company_name having industry = 'Retail' order by revenue limit 1 ; 
 ;
 
 
