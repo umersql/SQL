@@ -63,15 +63,15 @@ select paid_time_off_days, case when paid_time_off_days <= 16 then 'Bad Place to
 when paid_time_off_days <= 19 then 'Ok Place To Work At' when paid_time_off_days <= 24 then 'Good Place To Work At' 
 else 'Nothing' End as how_many from fortune_companies;
 
-# Which industries have an average revenue of at least $200 Billion, and what are their avg revenues?
+#1. Which industries have an average revenue of at least $200 Billion, and what are their avg revenues?
 select round(avg(revenue),1) as avg_revenue,industry from fortune_companies group by industry having revenue >= 200;
 
 
-# Which companies have healthcare benefits *and* at least 20 paid time off days?
+#2. Which companies have healthcare benefits *and* at least 20 paid time off days?
 select company_name, healthcare_benefits, paid_time_off_days from fortune_companies 
 where healthcare_benefits = 1 and paid_time_off_days >= 20 
 
-# Which company in the Retail industry has the least revenue, and what's their revenue? 
+#3. Which company in the Retail industry has the least revenue, and what's their revenue? 
 SELECT company_name, min(revenue)
 FROM fortune_companies
 WHERE industry = 'Retail' 
