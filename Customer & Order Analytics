@@ -19,23 +19,23 @@ WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
-select product,min(price) from JanSales 
+SELECT product,min(price) from JanSales 
 group by product order by min(price) asc limit 1
 
 #5. What is the total revenue for each product sold in January?
-select sum(quantity)*price as Revenue, 
+SELECT sum(quantity)*price as Revenue, 
 Product from JanSales 
 group by product;
 
 
 #6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
-select 
-sum(Quantity), 
-product, 
-sum(quantity)*price as revenue
-FROM BIT_DB.FebSales 
+SELECT
+sum(Quantity) as Quantity,
+Product,
+sum(quantity)*price as Revenue
+FROM FebSales
 WHERE location = '548 Lincoln St, Seattle, WA 98101'
-GROUP BY product
+GROUP BY product;
 
 #7. How many customers ordered more than 2 products at a time, and what was the average amount spent for those customers? 
 select 
