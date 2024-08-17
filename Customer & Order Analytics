@@ -14,7 +14,8 @@ AND orderid <> 'Order ID'
 
 #3. Select the customer account numbers for all the orders that were placed in February. 
 SELECT acctnum from customers inner join 
-FebSales on customers.order_id = FebSales.orderID WHERE length(orderid) = 6
+FebSales on customers.order_id = FebSales.orderID 
+WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
