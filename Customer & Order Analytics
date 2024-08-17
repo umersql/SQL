@@ -19,8 +19,8 @@ WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
-SELECT distinct product, price FROM BIT_DB.JanSales 
-ORDER BY price ASC LIMIT 1
+select product,min(price) from JanSales 
+group by product order by min(price) asc limit 1
 
 #5. What is the total revenue for each product sold in January?
 SELECT sum(quantity)*price as revenue
