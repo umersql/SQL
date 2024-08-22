@@ -61,4 +61,18 @@ AND orderid <> 'Order ID' group by location having count(orderID) > 2;
 select product,sum(quantity) from febsales 
 where product like '%headphones%' group by product;
 
+#11. What was the average amount spent per account in February?
+SELECT avg(quantity*price)
+FROM BIT_DB.FebSales Feb
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
 
+#12. What was the average quantity of products purchased per account in February?
+select sum(quantity)/count(cust.acctnum)
+FROM BIT_DB.FebSales Feb
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
