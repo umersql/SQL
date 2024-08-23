@@ -27,7 +27,6 @@ select sum(quantity)*price as Revenue,
 Product from JanSales 
 group by product;
 
-
 #6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
 select
 sum(Quantity) as Quantity,
