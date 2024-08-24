@@ -40,7 +40,16 @@ group by artist_name, track_name;
 
 #2. Who are the top 10 artists based on popularity?
 select artist_name, max(popularity) from spotifydata 
-group by artist_name order by max(popularity) desc limit 10
+group by artist_name order by max(popularity) desc limit 10;
 
-#3. 
+#3. What artist has an average popularity of over 80 where their nickname starts with the word "The"?
+select artist_name, avg(popularity) as average
+FROM spotifydata
+where artist_name like 'The%' GROUP BY artist_name having average >79;
+
+#4. What's the average danceability for the 10 most popular songs?
+select avg(danceability) as Average,track_name as Songs,Popularity from spotifydata 
+group by track_name order by popularity desc limit 10;
+
+
 
