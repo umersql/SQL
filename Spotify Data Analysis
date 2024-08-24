@@ -51,5 +51,10 @@ where artist_name like 'The%' GROUP BY artist_name having average >79;
 select avg(danceability) as Average,track_name as Songs,Popularity from spotifydata 
 group by track_name order by popularity desc limit 10;
 
+#5. Rank the artist's popularity into three categories: 'Bad,' 'Good,' 'Amazing'
+select distinct artist_name Artists , case when popularity <= 79 then 'Bad' when popularity <= 89 then 'Good' when popularity <= 95 
+then 'Amazing'else 'Unknown' end as Popularity 
+from spotifydata 
+
 
 
