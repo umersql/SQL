@@ -92,3 +92,15 @@ FROM "netflix_titles_info"
 WHERE type='Movie'
 ORDER BY release_year asc
 LIMIT 1;
+
+#6. Give me a list of netflix titles released in 2021 that have a director associated with them.
+
+with FilteredTitles AS (select n.show_id, n.title, n.type, n.release_year, p.director, p.cast from netflix_titles_info n join netflix_people p 
+on n.show_id = p.show_id where n.release_year = 2021 and p.director is not null)
+select show_id, title, type, release_year, director from FilteredTitles order by release_year, title;
+
+#7. What are the top 5 countries with the most Netflix titles added?
+
+select country, count(*) AS total_titles from netflix_titles_info where country IS not null and country in ( select country
+from netflix_titles_info where country IS NOT NULL group by country order by count(*) desc limit 5 ) group by country
+order by total_titles desc;
