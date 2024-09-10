@@ -1,22 +1,22 @@
 #In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data. 
 
 #1. How many orders were placed in January? 
-select COUNT(orderID) from JanSales 
-WHERE length(orderid) = 6 
-AND orderid <> 'Order ID';
+select count(orderID) from JanSales 
+where length(orderid) = 6 
+and orderid <> 'Order ID';
 
 #2. How many of those orders were for an iPhone? 
 select COUNT(orderid)
-FROM BIT_DB.JanSales
-WHERE Product='iPhone'
-AND length(orderid) = 6 
-AND orderid <> 'Order ID'
+from BIT_DB.JanSales
+where Product='iPhone'
+and length(orderid) = 6 
+and orderid <> 'Order ID'
 
 #3. Select the customer account numbers for all the orders that were placed in February. 
 select acctnum from customers inner join 
 FebSales on customers.order_id = FebSales.orderID 
-WHERE length(orderid) = 6
-AND orderid <> 'Order ID'
+where length(orderid) = 6
+and orderid <> 'Order ID'
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
 select product,min(price) from JanSales 
@@ -32,29 +32,29 @@ select
 sum(Quantity) as Quantity,
 Product,
 sum(quantity)*price as Revenue
-FROM FebSales
-WHERE location = '548 Lincoln St, Seattle, WA 98101'
-GROUP BY product;
+from FebSales
+where location = '548 Lincoln St, Seattle, WA 98101'
+group by product;
 
 #7. How many customers ordered more than 2 products at a time, and what was the average amount spent for those customers? 
 select 
 count(distinct acctnum), 
 avg(quantity*price)
-FROM FebSales
-LEFT JOIN BIT_DB.customers
-ON FEBsales.orderid=customers.order_id
-WHERE Quantity>2;
+from FebSales
+left join BIT_DB.customers
+on FEBsales.orderid=customers.order_id
+where Quantity>2;
 
 #8. List all the products sold in Los Angeles in February, and include how many of each were sold.
 select Product, SUM(quantity)
-FROM BIT_DB.FebSales
-WHERE location like '%Los Angeles%'
-GROUP BY Product;
+from BIT_DB.FebSales
+where location like '%Los Angeles%'
+group by Product;
 
 #9. Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
 select count(orderID),location from JanSales 
-where location like '%NY%' AND length(orderid) = 6 
-AND orderid <> 'Order ID' group by location having count(orderID) > 2;
+where location like '%NY%' and length(orderid) = 6 
+and orderid <> 'Order ID' group by location having count(orderID) > 2;
 
 #10. How many of each type of headphone was sold in February?
 select product,sum(quantity) from febsales 
@@ -62,19 +62,19 @@ where product like '%headphones%' group by product;
 
 #11. What was the average amount spent per account in February?
 select avg(quantity*price)
-FROM BIT_DB.FebSales Feb
-LEFT JOIN BIT_DB.customers cust
-ON FEB.orderid=cust.order_id
-WHERE length(orderid) = 6 
-AND orderid <> 'Order ID'
+from BIT_DB.FebSales Feb
+left join BIT_DB.customers cust
+on FEB.orderid=cust.order_id
+where length(orderid) = 6 
+and orderid <> 'Order ID'
 
 #12. What was the average quantity of products purchased per account in February?
 select sum(quantity)/count(cust.acctnum)
-FROM BIT_DB.FebSales Feb
-LEFT JOIN BIT_DB.customers cust
-ON FEB.orderid=cust.order_id
-WHERE length(orderid) = 6 
-AND orderid <> 'Order ID'
+from BIT_DB.FebSales Feb
+left join BIT_DB.customers cust
+on FEB.orderid=cust.order_id
+where length(orderid) = 6 
+and orderid <> 'Order ID'
 
 #13. Which product brought in the most revenue in January and how much revenue did it bring in total?
 select product, sum(price) from jansales 
