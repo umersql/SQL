@@ -58,6 +58,3 @@ then 'Amazing'else 'Unknown' end as Popularity from spotifydata
 #6. Track the popularity of each artist
 select id, artist_name, track_name, popularity, dense_rank() 
 OVER (partition by artist_name order by popularity desc) as popularity_rank from BIT_DB.Spotifydata;
-
-
-
