@@ -53,11 +53,3 @@
   as 'Total Sales' from Employees emp join Customers cust on cust.SupportRepId = emp.EmployeeId join Invoices Inv 
   on Inv.CustomerId = cust.CustomerId where emp.Title = 'Sales Support Agent' and Inv.InvoiceDate LIKE '2009%' 
   group by emp.FirstName order by (round(sum(Inv.Total), 2))  desc limit 1;
-
-
-
-
-
-
-
-
