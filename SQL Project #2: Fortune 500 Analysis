@@ -79,10 +79,3 @@ OR
 select company_name, min(revenue),industry from fortune_companies 
 group by company_name having industry = 'Retail' order by revenue limit 1 ; 
 ;
-
-
-
-
-
-
-
