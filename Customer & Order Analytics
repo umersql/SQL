@@ -80,4 +80,3 @@ and orderid <> 'Order ID'
 select product, sum(price) from jansales 
 group by product order by sum(price) 
 desc limit 1
-
