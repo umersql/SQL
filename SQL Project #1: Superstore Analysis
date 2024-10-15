@@ -36,7 +36,3 @@ select count(category) as AvailableItems,category from superstore group by categ
 
 #3. Show a statistic about the price for items in the category of "Kitchen Supplies". 
 select item_name,price, category from superstore where price > 40.00 and category = 'Kitchen Supplies'
-
-
-
-
